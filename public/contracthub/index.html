@@ -3,62 +3,44 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CONTRACTHUB · Kontrak tertib. Pelabuhan bergerak.</title>
-  <meta name="description" content="CONTRACTHUB — sistem manajemen kontrak PT Pelindo Cirebon: legalitas, pengingat jatuh tempo, dan hak akses terkontrol.">
+  <title>CONTRACTHUB · Beranda</title>
+  <meta name="description" content="CONTRACTHUB — sistem manajemen kontrak PT Pelindo Cirebon.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            teal: { DEFAULT: '#004C6D', 600: '#0A5E82' },
-            navy: '#002B36',
-            mint: '#E0F2F1',
-            cream: '#F7F4EC',
-          },
-          fontFamily: { sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'] },
-          maxWidth: { shell: '1200px' },
-        },
-      },
-    };
+    tailwind.config = { theme: { extend: {
+      colors: { teal: { DEFAULT: '#004C6D', 600: '#0A5E82' }, navy: '#002B36', mint: '#E0F2F1', cream: '#F7F4EC' },
+      fontFamily: { sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'] },
+      maxWidth: { shell: '1200px' } } } };
   </script>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body class="bg-white text-navy font-sans antialiased">
-
 <header id="siteHeader" class="site-header fixed inset-x-0 top-0 z-50">
   <div class="mx-auto flex h-16 max-w-shell items-center justify-between px-6">
-    <a href="#top" class="flex items-center gap-3" aria-label="CONTRACTHUB beranda">
-      <svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true">
-        <rect x="1" y="1" width="26" height="26" rx="6" fill="#004C6D"/>
-        <path d="M8 9h9l3 3v7H8z" fill="none" stroke="#E0F2F1" stroke-width="1.6" stroke-linejoin="round"/>
-        <path d="M11 14h6M11 17h4" stroke="#E0F2F1" stroke-width="1.6" stroke-linecap="round"/>
-      </svg>
-      <span class="text-[15px] font-extrabold tracking-tight">CONTRACTHUB</span>
-      <span class="hidden rounded-full border border-teal/20 bg-mint px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wider text-teal sm:inline">PT Pelindo Cirebon</span>
+    <a href="#top" class="flex items-center gap-2.5" aria-label="CONTRACTHUB beranda">
+      <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#004C6D" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="5" r="2"/><path d="M12 7v13M7 11h10M4 15c2 5 14 5 16 0"/></svg>
+      <span class="text-[13px] font-bold tracking-tight">CONTRACTHUB</span>
     </a>
-
     <nav class="hidden md:block" aria-label="Navigasi utama">
-      <ul class="flex items-center gap-8 text-sm font-medium text-navy/70">
+      <ul class="flex items-center gap-9">
         <li><a class="nav-link" href="#tentang">Tentang Sistem</a></li>
         <li><a class="nav-link" href="#layanan">Layanan</a></li>
         <li><a class="nav-link" href="#alur">Alur Kontrak</a></li>
         <li><a class="nav-link" href="#bantuan">Bantuan</a></li>
       </ul>
     </nav>
-
-    <div class="flex items-center gap-3">
-      <a href="login.php" class="btn-primary">Masuk ke sistem</a>
-      <button id="menuToggle" class="md:hidden rounded-md p-2 text-navy" aria-label="Buka menu" aria-expanded="false" aria-controls="mobileNav">
+    <div class="flex items-center gap-2">
+      <a href="login.php" class="btn-primary">↗&nbsp; Masuk ke sistem</a>
+      <button id="menuToggle" class="md:hidden p-2" aria-label="Buka menu" aria-expanded="false" aria-controls="mobileNav">
         <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
       </button>
     </div>
   </div>
   <nav id="mobileNav" class="hidden border-t border-navy/10 bg-white md:hidden" aria-label="Navigasi seluler">
-    <ul class="mx-auto flex max-w-shell flex-col px-6 py-3 text-sm font-medium">
+    <ul class="flex flex-col px-6 py-3 text-sm">
       <li><a class="block py-2" href="#tentang">Tentang Sistem</a></li>
       <li><a class="block py-2" href="#layanan">Layanan</a></li>
       <li><a class="block py-2" href="#alur">Alur Kontrak</a></li>
@@ -68,327 +50,301 @@
 </header>
 <main id="top">
 
-  <!-- ============ HERO: Binocular parallax ============ -->
+  <!-- HERO -->
   <section id="hero" class="hero" aria-labelledby="heroTitle">
-    <div class="hero-stage">
-      <!-- Layer 1: vector port landscape -->
-      <svg class="hero-layer hero-vector" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-        <rect width="1440" height="900" fill="#E0F2F1"/>
-        <circle cx="1120" cy="250" r="56" fill="#F7F4EC"/>
-        <rect y="560" width="1440" height="340" fill="#7FB8C4"/>
-        <path d="M0 600h1440M0 650h1440M0 720h1440" stroke="#E0F2F1" stroke-width="2" opacity=".5"/>
-        <!-- quay -->
-        <rect x="760" y="520" width="680" height="40" fill="#004C6D"/>
-        <!-- container stacks -->
-        <g fill="#0A5E82">
-          <rect x="1180" y="440" width="70" height="40"/><rect x="1180" y="480" width="70" height="40"/>
-          <rect x="1255" y="480" width="70" height="40"/><rect x="1330" y="460" width="70" height="60"/>
+    <svg class="hero-scene" viewBox="0 0 1440 640" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+      <g class="layer-sky">
+        <circle cx="1220" cy="140" r="38" fill="#F3E6C4"/>
+        <g fill="none" stroke="#9FC6CC" stroke-width="2.5" stroke-linecap="round">
+          <path d="M1080 120c20-30 60-30 75 0 20-25 60-20 65 10 25 0 35 30 10 40h-150c-25-10-20-45 0-50z" fill="#F4FAFA"/>
+          <path d="M1110 150c15-10 30-10 40 0M1170 140c10-8 25-8 35 0"/>
         </g>
+        <path d="M980 190l10-6 10 6M1010 205l8-5 8 5" stroke="#3E6E80" stroke-width="2" fill="none"/>
+      </g>
+      <g class="layer-hills" fill="#B9DADD"><path d="M0 430c160-40 300-50 460-20s320 10 480-20 340-10 500 20v230H0z"/></g>
+      <g class="layer-port">
+        <!-- warehouses -->
+        <g fill="#7FA7B0"><rect x="560" y="370" width="160" height="70"/><rect x="730" y="350" width="130" height="90"/></g>
+        <g fill="#5E8A96"><path d="M560 370l80-30 80 30zM730 350l65-25 65 25z"/></g>
         <!-- crane -->
-        <g stroke="#002B36" stroke-width="8" fill="none">
-          <path d="M960 520V300M1040 520V300M940 300h260M960 300l80-60 80 60"/>
-          <path d="M1180 300v60"/>
+        <g stroke="#1F4A58" stroke-width="7" fill="none" stroke-linejoin="round">
+          <path d="M1080 480V250M1150 480V250M1060 250h230M1080 250l35-60 35 60M1115 190l170 60"/>
+          <path d="M1260 250v80"/>
         </g>
-        <rect x="1160" y="360" width="40" height="22" fill="#002B36"/>
-        <!-- ship -->
-        <path d="M520 520h420l-40 60H560z" fill="#002B36"/>
-        <rect x="600" y="470" width="80" height="50" fill="#F7F4EC"/>
-        <rect x="690" y="480" width="60" height="40" fill="#0A5E82"/>
-        <rect x="755" y="480" width="60" height="40" fill="#004C6D"/>
-        <rect x="610" y="440" width="20" height="30" fill="#004C6D"/>
-      </svg>
+        <rect x="1245" y="330" width="30" height="16" fill="#1F4A58"/>
+      </g>
+      <g class="layer-sea">
+        <rect y="440" width="1440" height="200" fill="#8EC3C7"/>
+        <path d="M0 470h1440" stroke="#BFE0E1" stroke-width="2"/>
+        <g stroke="#BFE0E1" stroke-width="2" stroke-linecap="round" opacity=".8">
+          <path d="M80 520h60M220 560h90M420 600h50M900 540h80M1180 590h70M1320 520h50"/>
+        </g>
+      </g>
+      <g class="layer-ship">
+        <path d="M600 440h420l-35 55H640z" fill="#18394A"/>
+        <path d="M640 495h345" stroke="#C9473B" stroke-width="5"/>
+        <rect x="640" y="395" width="90" height="45" fill="#2E5A6A"/>
+        <rect x="740" y="405" width="80" height="35" fill="#DDE8E8"/>
+        <rect x="830" y="405" width="80" height="35" fill="#4D7B88"/>
+        <rect x="660" y="365" width="26" height="30" fill="#18394A"/>
+        <path d="M673 365v-25" stroke="#18394A" stroke-width="3"/><path d="M673 342h14v8h-14z" fill="#C9473B"/>
+      </g>
+      <g class="layer-buoy" stroke="#3E6E80" stroke-width="2.5" fill="none"><path d="M1330 560c-20 10-20 35 5 40 20 5 30-20 15-30"/></g>
+    </svg>
 
-      <!-- Layer 2: real port photograph -->
-      <img class="hero-layer hero-photo" src="assets/img/port-photo.jpg" alt="Dermaga petikemas Pelabuhan Cirebon dengan crane dan kapal sandar" width="1920" height="1088">
-
-      <!-- Layer 3: binocular frame (mask with two lens cut-outs) -->
-      <svg class="hero-layer hero-binocular" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-        <defs>
-          <mask id="lensMask">
-            <rect width="1440" height="900" fill="#fff"/>
-            <circle cx="560" cy="450" r="230" fill="#000"/>
-            <circle cx="880" cy="450" r="230" fill="#000"/>
-          </mask>
-        </defs>
-        <rect width="1440" height="900" fill="#002B36" mask="url(#lensMask)"/>
-        <circle cx="560" cy="450" r="230" fill="none" stroke="#004C6D" stroke-width="14"/>
-        <circle cx="880" cy="450" r="230" fill="none" stroke="#004C6D" stroke-width="14"/>
-        <path d="M700 450h40" stroke="#E0F2F1" stroke-width="2" opacity=".35"/>
-        <path d="M720 430v40" stroke="#E0F2F1" stroke-width="2" opacity=".35"/>
-      </svg>
-
-      <!-- Copy -->
-      <div class="hero-copy">
-        <div class="mx-auto max-w-shell px-6">
-          <p class="eyebrow eyebrow-light">PT Pelindo · Cabang Cirebon</p>
-          <h1 id="heroTitle" class="mt-5 max-w-3xl text-5xl font-extrabold leading-[1.02] tracking-tight text-white md:text-7xl">Kontrak tertib.<br>Pelabuhan bergerak.</h1>
-          <p class="mt-6 max-w-xl text-lg leading-relaxed text-white/80">Satu ruang untuk mengelola kontrak, menjaga legalitas, dan memastikan setiap kerja sama tetap berjalan.</p>
-          <div class="mt-9 flex flex-wrap gap-3">
-            <a href="login.php" class="btn-primary btn-lg">Buka ruang kerja</a>
-            <a href="#layanan" class="btn-ghost-light btn-lg">Lihat layanan</a>
-          </div>
-        </div>
+    <div class="hero-content mx-auto max-w-shell px-6">
+      <p class="eyebrow"><span class="dot"></span>PT Pelindo · Cabang Cirebon</p>
+      <h1 id="heroTitle" class="hero-title">Kontrak tertib.<br>Pelabuhan bergerak<span class="text-teal">.</span></h1>
+      <p class="hero-sub">Satu ruang untuk mengelola kontrak, menjaga legalitas, dan memastikan setiap kerja sama tetap berjalan.</p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="login.php" class="btn-primary">→&nbsp; Buka ruang kerja</a>
+        <a href="#layanan" class="btn-soft">Live Quota &amp; Throughput</a>
       </div>
-
-      <p class="hero-hint" aria-hidden="true">Gulir untuk melihat lebih dekat</p>
+    </div>
+    <div class="hero-foot mx-auto max-w-shell px-6">
+      <p><span class="label">Arsip ke Kendali</span><br>Simulasi gulir — tinjauan kontrak lebih dekat.</p>
+      <p class="hidden md:block">Gudang · Dermaga · Gate · Lahan pelabuhan</p>
     </div>
   </section>
 
-  <!-- ============ TENTANG ============ -->
+  <!-- TENTANG -->
   <section id="tentang" class="section bg-white">
-    <div class="mx-auto grid max-w-shell gap-12 px-6 md:grid-cols-12">
+    <div class="mx-auto grid max-w-shell gap-12 px-6 md:grid-cols-12 md:items-center">
       <div class="md:col-span-6 reveal">
         <h2 class="h2">Bukan sekadar arsip.<br>Kendali atas setiap janji.</h2>
-        <p class="lead mt-5">Dari perjanjian sewa gudang hingga izin di dermaga, CONTRACTHUB menyatukan informasi yang dibutuhkan tim legal dan operasional.</p>
+        <p class="lead mt-5 max-w-md">Dari perjanjian sewa gudang hingga layanan kapal di dermaga, CONTRACTHUB menyatukan informasi yang dibutuhkan tim legal dan operasional.</p>
       </div>
-      <ul class="md:col-span-5 md:col-start-8 divide-y divide-navy/10 border-y border-navy/10 reveal">
-        <li class="py-5"><p class="font-semibold">Satu sumber informasi</p><p class="mt-1 text-sm text-navy/60">Kontrak, dokumen, dan riwayat dalam satu tempat.</p></li>
-        <li class="py-5"><p class="font-semibold">Tepat waktu, bukan terburu-buru</p><p class="mt-1 text-sm text-navy/60">Tenggat terpantau jauh sebelum terlambat.</p></li>
-        <li class="py-5"><p class="font-semibold">Setiap perubahan tercatat</p><p class="mt-1 text-sm text-navy/60">Jejak revisi dan persetujuan dapat diaudit kapan saja.</p></li>
+      <ul class="md:col-span-5 md:col-start-8 space-y-6 reveal">
+        <li class="feat"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="12" height="12" rx="2"/><path d="M8 20h12V8"/></svg><div><p class="feat-t">Satu sumber informasi</p><p class="feat-d">Kontrak, dokumen, dan riwayat dalam satu tempat.</p></div></li>
+        <li class="feat"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg><div><p class="feat-t">Tepat waktu, bukan terburu-buru</p><p class="feat-d">Tenggat terpantau jauh sebelum terlambat.</p></div></li>
+        <li class="feat"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h10l4 4v12H5z"/><path d="M9 13l2 2 4-4"/></svg><div><p class="feat-t">Setiap perubahan tercatat</p><p class="feat-d">Jejak revisi dan persetujuan siap diaudit.</p></div></li>
       </ul>
     </div>
   </section>
 
-  <!-- ============ LAYANAN ============ -->
-  <section id="layanan" class="section bg-cream">
+  <!-- LAYANAN -->
+  <section id="layanan" class="section section-pillars">
     <div class="mx-auto max-w-shell px-6">
-      <div class="grid gap-6 md:grid-cols-12 md:items-end">
-        <div class="md:col-span-7 reveal">
-          <p class="eyebrow">Pilar layanan</p>
-          <h2 class="h2 mt-4">6 Pilar Layanan Pelabuhan</h2>
-        </div>
-        <p class="lead md:col-span-4 md:col-start-9 reveal">Enam jenis kerja sama pelabuhan, masing-masing dengan alur dan dokumen yang sesuai.</p>
+      <div class="reveal">
+        <h2 class="h3">6 Pilar Layanan Pelabuhan</h2>
+        <p class="lead mt-3 max-w-xl text-sm">Dokumen kontrak terstandar dari setiap BUMN mitra, diverifikasi tarif SK Direksi Pelindo, terintegrasi RFID gate dan throughput real-time.</p>
       </div>
-
-      <div class="mt-14 grid gap-px overflow-hidden rounded-xl border border-navy/10 bg-navy/10 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 <article class="service-card reveal">
-          <div class="flex items-center justify-between">
-            <span class="tag">Gudang 24 Jam</span>
-            <span class="text-xs font-semibold tabular-nums text-navy/40">01</span>
-          </div>
-          <h3 class="mt-8 text-xl font-bold tracking-tight">Sewa Gudang 24 Jam</h3>
-          <p class="mt-3 text-sm leading-relaxed text-navy/65">Kontrak sewa gudang D3, D4 &amp; Lini 1–2 dengan masa berlaku, tarif, dan addendum dalam satu catatan.</p>
-          <div class="mt-8 flex items-center justify-between border-t border-navy/10 pt-4 text-sm">
-            <span class="font-semibold text-teal">38 kontrak aktif</span>
-            <a href="layanan.php?id=1" class="card-link" aria-label="Detail Sewa Gudang 24 Jam">Detail →</a>
+          <span class="tag">Gudang Lini 1 &amp; 2</span>
+          <h3 class="mt-5 text-[17px] font-semibold">Sewa Gudang D3, D4 &amp; Lini 1–2</h3>
+          <p class="mt-2 text-[13px] leading-relaxed text-navy/60">Perjanjian sewa gudang 24 jam dengan tarif, masa berlaku, dan addendum tercatat rapi.</p>
+          <div class="mt-6 flex items-center justify-between">
+            <span class="meta">38 Kontrak Aktif</span>
+            <a href="#" class="text-navy/50 hover:text-teal" aria-label="Detail Sewa Gudang D3, D4 &amp; Lini 1–2">→</a>
           </div>
         </article>
                 <article class="service-card reveal">
-          <div class="flex items-center justify-between">
-            <span class="tag">Armada</span>
-            <span class="text-xs font-semibold tabular-nums text-navy/40">02</span>
-          </div>
-          <h3 class="mt-8 text-xl font-bold tracking-tight">Trucking &amp; Fleet Armada</h3>
-          <p class="mt-3 text-sm leading-relaxed text-navy/65">Perjanjian operasional trailer dan head truck, lengkap dengan rekam STNK dan izin lintas pelabuhan.</p>
-          <div class="mt-8 flex items-center justify-between border-t border-navy/10 pt-4 text-sm">
-            <span class="font-semibold text-teal">24 vendor terdaftar</span>
-            <a href="layanan.php?id=2" class="card-link" aria-label="Detail Trucking &amp; Fleet Armada">Detail →</a>
+          <span class="tag">Armada Darat</span>
+          <h3 class="mt-5 text-[17px] font-semibold">Trucking &amp; Ritase Armada</h3>
+          <p class="mt-2 text-[13px] leading-relaxed text-navy/60">Kontrak operasional trailer dan head truck, lengkap dengan rekam ritase dan izin lintas.</p>
+          <div class="mt-6 flex items-center justify-between">
+            <span class="meta">24 Vendor Terdaftar</span>
+            <a href="#" class="text-navy/50 hover:text-teal" aria-label="Detail Trucking &amp; Ritase Armada">→</a>
           </div>
         </article>
                 <article class="service-card reveal">
-          <div class="flex items-center justify-between">
-            <span class="tag">Stevedoring</span>
-            <span class="text-xs font-semibold tabular-nums text-navy/40">03</span>
-          </div>
-          <h3 class="mt-8 text-xl font-bold tracking-tight">PBM Bongkar Muat</h3>
-          <p class="mt-3 text-sm leading-relaxed text-navy/65">Kerja sama Perusahaan Bongkar Muat untuk curah dan petikemas, terhubung dengan SLA produktivitas.</p>
-          <div class="mt-8 flex items-center justify-between border-t border-navy/10 pt-4 text-sm">
-            <span class="font-semibold text-teal">12 mitra PBM</span>
-            <a href="layanan.php?id=3" class="card-link" aria-label="Detail PBM Bongkar Muat">Detail →</a>
+          <span class="tag">Stevedoring PBM</span>
+          <h3 class="mt-5 text-[17px] font-semibold">PBM Bongkar Muat Curah &amp; Petikemas</h3>
+          <p class="mt-2 text-[13px] leading-relaxed text-navy/60">Kerja sama Perusahaan Bongkar Muat, produktivitas crane dermaga, dan SLA kerja.</p>
+          <div class="mt-6 flex items-center justify-between">
+            <span class="meta">12 Mitra PBM Resmi</span>
+            <a href="#" class="text-navy/50 hover:text-teal" aria-label="Detail PBM Bongkar Muat Curah &amp; Petikemas">→</a>
           </div>
         </article>
                 <article class="service-card reveal">
-          <div class="flex items-center justify-between">
-            <span class="tag">ISPS Code</span>
-            <span class="text-xs font-semibold tabular-nums text-navy/40">04</span>
-          </div>
-          <h3 class="mt-8 text-xl font-bold tracking-tight">Pas Masuk Pelabuhan &amp; E-Gate</h3>
-          <p class="mt-3 text-sm leading-relaxed text-navy/65">Penerbitan kartu pas dan RFID gate sesuai ISPS Code, terintegrasi dengan verifikasi dokumen pengguna.</p>
-          <div class="mt-8 flex items-center justify-between border-t border-navy/10 pt-4 text-sm">
-            <span class="font-semibold text-teal">1.046 kartu terbit</span>
-            <a href="layanan.php?id=4" class="card-link" aria-label="Detail Pas Masuk Pelabuhan &amp; E-Gate">Detail →</a>
+          <span class="tag">ISPS Code Security</span>
+          <h3 class="mt-5 text-[17px] font-semibold">Pas Masuk Pelabuhan RFID Gate</h3>
+          <p class="mt-2 text-[13px] leading-relaxed text-navy/60">Penerbitan kartu pas dan E-Gate sesuai ISPS Code, terintegrasi verifikasi dokumen.</p>
+          <div class="mt-6 flex items-center justify-between">
+            <span class="meta">1.046 Kartu Terbit</span>
+            <a href="#" class="text-navy/50 hover:text-teal" aria-label="Detail Pas Masuk Pelabuhan RFID Gate">→</a>
           </div>
         </article>
                 <article class="service-card reveal">
-          <div class="flex items-center justify-between">
-            <span class="tag">Lahan</span>
-            <span class="text-xs font-semibold tabular-nums text-navy/40">05</span>
-          </div>
-          <h3 class="mt-8 text-xl font-bold tracking-tight">Sewa Lahan</h3>
-          <p class="mt-3 text-sm leading-relaxed text-navy/65">Pemanfaatan lahan penumpukan, open storage, dan area pendukung dengan peta lokasi per kontrak.</p>
-          <div class="mt-8 flex items-center justify-between border-t border-navy/10 pt-4 text-sm">
-            <span class="font-semibold text-teal">23 lokasi tersewa</span>
-            <a href="layanan.php?id=5" class="card-link" aria-label="Detail Sewa Lahan">Detail →</a>
+          <span class="tag">Container Yard</span>
+          <h3 class="mt-5 text-[17px] font-semibold">Sewa Lahan Open Storage CY</h3>
+          <p class="mt-2 text-[13px] leading-relaxed text-navy/60">Pemanfaatan lapangan penumpukan dan area pendukung dengan peta lokasi per kontrak.</p>
+          <div class="mt-6 flex items-center justify-between">
+            <span class="meta">23 Lokasi Tersewa</span>
+            <a href="#" class="text-navy/50 hover:text-teal" aria-label="Detail Sewa Lahan Open Storage CY">→</a>
           </div>
         </article>
                 <article class="service-card reveal">
-          <div class="flex items-center justify-between">
-            <span class="tag">Perizinan</span>
-            <span class="text-xs font-semibold tabular-nums text-navy/40">06</span>
-          </div>
-          <h3 class="mt-8 text-xl font-bold tracking-tight">Certificate / Permit Tracker</h3>
-          <p class="mt-3 text-sm leading-relaxed text-navy/65">Pantau sertifikat, izin usaha, dan dokumen K3 mitra—sistem menandai yang mendekati kedaluwarsa.</p>
-          <div class="mt-8 flex items-center justify-between border-t border-navy/10 pt-4 text-sm">
-            <span class="font-semibold text-teal">96 dokumen dipantau</span>
-            <a href="layanan.php?id=6" class="card-link" aria-label="Detail Certificate / Permit Tracker">Detail →</a>
+          <span class="tag">Certificate &amp; Permit</span>
+          <h3 class="mt-5 text-[17px] font-semibold">Certificate / Permit Tracker</h3>
+          <p class="mt-2 text-[13px] leading-relaxed text-navy/60">Pantau sertifikat, izin usaha, dan dokumen K3 mitra sebelum masa berlakunya habis.</p>
+          <div class="mt-6 flex items-center justify-between">
+            <span class="meta">96 Dokumen Dipantau</span>
+            <a href="#" class="text-navy/50 hover:text-teal" aria-label="Detail Certificate / Permit Tracker">→</a>
           </div>
         </article>
               </div>
     </div>
   </section>
 
-  <!-- ============ ALUR + REMINDER ============ -->
-  <section id="alur" class="section bg-navy text-white">
+  <!-- ALUR -->
+  <section id="alur" class="section section-steps">
     <div class="mx-auto max-w-shell px-6">
       <div class="grid gap-6 md:grid-cols-12 md:items-end">
-        <h2 class="h2 md:col-span-7 reveal">Setiap tahap, jelas arahnya.</h2>
-        <p class="md:col-span-4 md:col-start-9 text-white/60 reveal">Siklus yang terlindungi, tanpa kehilangan konteks di tengah proses.</p>
+        <h2 class="h2 text-white md:col-span-8 reveal">Setiap tahap, jelas arahnya.</h2>
+        <p class="text-sm text-white/60 md:col-span-3 md:col-start-10 reveal">Siklus yang terlindungi, tanpa kehilangan konteks di tengah proses.</p>
       </div>
-
-      <ol class="mt-14 grid gap-10 border-t border-white/15 pt-10 sm:grid-cols-2 lg:grid-cols-4">
+      <ol class="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
                 <li class="step reveal">
-          <span class="text-sm font-semibold tabular-nums text-mint/70">01</span>
-          <h3 class="mt-4 text-lg font-bold">Susun &amp; tinjau</h3>
-          <p class="mt-2 text-sm leading-relaxed text-white/60">Draf disusun dari templat resmi, ditinjau Legal sebelum diedarkan.</p>
+          <div class="flex items-center justify-between border-b border-white/15 pb-3"><span class="step-no">01</span><span class="text-white/50">→</span></div>
+          <h3 class="mt-5 font-semibold text-white">Susun & tinjau</h3>
+          <p class="mt-2 text-[13px] leading-relaxed text-white/55">Lengkapi informasi, anggaran, dan pihak terkait sebelum diedarkan.</p>
+          <p class="mt-4 text-[11px] text-white/40">Draf</p>
         </li>
                 <li class="step reveal">
-          <span class="text-sm font-semibold tabular-nums text-mint/70">02</span>
-          <h3 class="mt-4 text-lg font-bold">Sepakati &amp; aktifkan</h3>
-          <p class="mt-2 text-sm leading-relaxed text-white/60">Tanda tangan elektronik, nomor kontrak terbit, masa berlaku dimulai.</p>
+          <div class="flex items-center justify-between border-b border-white/15 pb-3"><span class="step-no">02</span><span class="text-white/50">→</span></div>
+          <h3 class="mt-5 font-semibold text-white">Sepakati & aktifkan</h3>
+          <p class="mt-2 text-[13px] leading-relaxed text-white/55">Konfirmasi tanda tangan, nomor kontrak terbit, masa berlaku dimulai.</p>
+          <p class="mt-4 text-[11px] text-white/40">Aktif</p>
         </li>
                 <li class="step reveal">
-          <span class="text-sm font-semibold tabular-nums text-mint/70">03</span>
-          <h3 class="mt-4 text-lg font-bold">Pantau &amp; ingatkan</h3>
-          <p class="mt-2 text-sm leading-relaxed text-white/60">Kewajiban dan tenggat dipantau; pengingat terkirim otomatis.</p>
+          <div class="flex items-center justify-between border-b border-white/15 pb-3"><span class="step-no">03</span><span class="text-white/50">→</span></div>
+          <h3 class="mt-5 font-semibold text-white">Pantau & ingatkan</h3>
+          <p class="mt-2 text-[13px] leading-relaxed text-white/55">Jadwal tenggat dan kinerja dipantau; pengingat H-30, H-14, H-7.</p>
+          <p class="mt-4 text-[11px] text-white/40">Pemantauan</p>
         </li>
                 <li class="step reveal">
-          <span class="text-sm font-semibold tabular-nums text-mint/70">04</span>
-          <h3 class="mt-4 text-lg font-bold">Perpanjang atau tutup</h3>
-          <p class="mt-2 text-sm leading-relaxed text-white/60">Keputusan dicatat, arsip dikunci, riwayat tetap dapat ditelusuri.</p>
+          <div class="flex items-center justify-between border-b border-white/15 pb-3"><span class="step-no">04</span><span class="text-white/50">→</span></div>
+          <h3 class="mt-5 font-semibold text-white">Perpanjang atau tutup</h3>
+          <p class="mt-2 text-[13px] leading-relaxed text-white/55">Simpan keputusan, riwayat, dan evaluasi mitra pada arsip.</p>
+          <p class="mt-4 text-[11px] text-white/40">Selesai</p>
         </li>
               </ol>
+    </div>
+  </section>
 
-      <div class="mt-24 grid gap-12 md:grid-cols-12">
-        <div class="md:col-span-5 reveal">
-          <p class="eyebrow eyebrow-light">Smart reminder</p>
-          <h3 class="mt-4 text-3xl font-bold leading-tight tracking-tight md:text-4xl">Jangan biarkan waktu berlabuh tanpa kabar.</h3>
-          <p class="mt-5 text-white/65">Pengingat terjadwal dikirim ke pihak yang tepat melalui WhatsApp dan Email, sebelum masa berlaku habis.</p>
-          <div class="mt-6 flex gap-2">
-            <span class="chip">WhatsApp</span><span class="chip">Email</span><span class="chip">Notifikasi sistem</span>
+  <!-- DOKUMEN -->
+  <section class="section section-docs">
+    <div class="mx-auto grid max-w-shell gap-12 px-6 md:grid-cols-12 md:items-center">
+      <figure class="doc-photo md:col-span-6 reveal">
+        <img src="assets/img/warehouse.jpg" alt="Gudang No. 1 Pelabuhan Cirebon" width="1280" height="896" loading="lazy">
+        <figcaption class="doc-cap"><span><b>Gudang · Pelabuhan Cirebon</b><br>Setiap ruang, tercatat dalam kontrak.</span><span>↗</span></figcaption>
+      </figure>
+      <div class="md:col-span-5 md:col-start-8 reveal">
+        <h2 class="h2 text-white">Dokumen lengkap.<br>Keputusan lebih mantap.</h2>
+        <p class="mt-5 text-sm text-white/70">Simpan kontrak PDF atau Word, periksa izin dan sertifikat, serta telusuri versi dokumen tanpa berpindah ruang kerja.</p>
+        <div class="doc-card mt-8">
+          <div class="flex items-center justify-between gap-4">
+            <div class="flex items-center gap-3"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5"/></svg><div><p class="text-sm font-semibold">Perjanjian_Sewa_Gudang_03.pdf</p><p class="text-[11px] text-navy/50">Versi 3 · 2,4 MB · 12 Mei 2026</p></div></div>
+            <span class="status">Ditandatangani</span>
           </div>
-        </div>
-        <div class="md:col-span-6 md:col-start-7 reveal">
-          <div class="rounded-xl bg-white p-6 text-navy">
-            <div class="flex items-center justify-between border-b border-navy/10 pb-4">
-              <p class="text-sm font-semibold">Perjanjian Sewa Gudang D3 · No. 014/PLC/2026</p>
-              <span class="tag">Aktif</span>
-            </div>
-            <ul class="divide-y divide-navy/10">
-                            <li class="alert-row">
-                <span class="alert-h">H-30</span>
-                <div><p class="font-semibold">Waktunya meninjau</p><p class="mt-0.5 text-sm text-navy/60">Pemilik kontrak menerima ringkasan kewajiban dan kinerja mitra.</p></div>
-              </li>
-                            <li class="alert-row">
-                <span class="alert-h">H-14</span>
-                <div><p class="font-semibold">Pastikan tindak lanjut</p><p class="mt-0.5 text-sm text-navy/60">Manager Logistik dan Legal menerima status keputusan perpanjangan.</p></div>
-              </li>
-                            <li class="alert-row">
-                <span class="alert-h">H-7</span>
-                <div><p class="font-semibold">Keputusan perlu diambil</p><p class="mt-0.5 text-sm text-navy/60">Eskalasi ke atasan bila belum ada keputusan perpanjangan atau penutupan.</p></div>
-              </li>
-                          </ul>
-          </div>
+          <p class="mt-4 border-t border-navy/10 pt-3 text-[11px] text-navy/55">✓ Izin terverifikasi · Riwayat versi tersimpan</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ RBAC ============ -->
-  <section id="akses" class="section bg-white">
+  <!-- REMINDER -->
+  <section class="section section-mint">
+    <div class="mx-auto grid max-w-shell gap-12 px-6 md:grid-cols-12 md:items-center">
+      <div class="md:col-span-5 reveal">
+        <h2 class="h2">Jangan biarkan<br>waktu berlabuh<br>tanpa kabar.</h2>
+        <p class="lead mt-5 text-sm">Pengingat berjenjang memberi ruang untuk meninjau, berdiskusi, dan memutuskan kontrak sebelum masa berlakunya habis.</p>
+        <ul class="mt-6 flex flex-wrap gap-6 text-xs text-navy/70">
+          <li>✉ Email</li><li>◯ WhatsApp</li><li>△ Dashboard</li>
+        </ul>
+      </div>
+      <div class="md:col-span-6 md:col-start-7 reveal">
+        <div class="remind-card">
+          <div class="flex items-center justify-between border-b border-navy/10 pb-4">
+            <p class="text-sm font-semibold">Sebelum kontrak berakhir</p><span class="tag">Contoh alur</span>
+          </div>
+          <ul>
+                        <li class="alert-row">
+              <span class="alert-h ">H-30</span>
+              <div><p class="text-sm font-semibold">Waktunya meninjau</p><p class="mt-0.5 text-[12px] text-navy/55">Pemilik kontrak menerima ringkasan kewajiban.</p></div>
+            </li>
+                        <li class="alert-row">
+              <span class="alert-h ">H-14</span>
+              <div><p class="text-sm font-semibold">Pastikan tindak lanjut</p><p class="mt-0.5 text-[12px] text-navy/55">Manager Logistik menerima status keputusan perpanjangan.</p></div>
+            </li>
+                        <li class="alert-row">
+              <span class="alert-h is-urgent">H-7</span>
+              <div><p class="text-sm font-semibold">Keputusan perlu diambil</p><p class="mt-0.5 text-[12px] text-navy/55">Eskalasi ke atasan bila belum ada keputusan.</p></div>
+            </li>
+                      </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RBAC -->
+  <section id="akses" class="section bg-cream">
     <div class="mx-auto max-w-shell px-6">
       <div class="grid gap-6 md:grid-cols-12 md:items-end">
-        <h2 class="h2 md:col-span-7 reveal">Hak Akses Terkontrol, Kerja Lebih Terarah.</h2>
-        <p class="lead md:col-span-4 md:col-start-9 reveal">Hak akses mengikuti tanggung jawab. Informasi tetap aman dan relevan.</p>
+        <h2 class="h2 md:col-span-8 reveal">Hak Akses Terkontrol, Kerja Lebih Terarah</h2>
+        <p class="text-sm text-navy/60 md:col-span-3 md:col-start-10 reveal">Hak akses mengikuti tanggung jawab. Informasi tetap aman dan relevan.</p>
       </div>
-      <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-                <article class="role-card reveal">
-          <span class="role-badge">ADM</span>
-          <h3 class="mt-6 text-lg font-bold">Admin Legal</h3>
-          <p class="mt-2 text-sm leading-relaxed text-navy/65">Menyusun templat, memvalidasi klausul, dan mengunci arsip final.</p>
-          <ul class="mt-6 flex flex-wrap gap-1.5">
-            <li class="perm">Buat</li><li class="perm">Ubah</li><li class="perm">Setujui</li><li class="perm">Arsip</li>          </ul>
+      <div class="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+                <article class="reveal">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg>          <h3 class="mt-5 font-semibold">Admin Legal</h3>
+          <p class="mt-2 text-[13px] leading-relaxed text-navy/55">Mengelola kontrak, templat klausul, dan arsip final.</p>
         </article>
-                <article class="role-card reveal">
-          <span class="role-badge">MGR</span>
-          <h3 class="mt-6 text-lg font-bold">Manager Logistik</h3>
-          <p class="mt-2 text-sm leading-relaxed text-navy/65">Memantau kinerja mitra dan memutuskan perpanjangan kontrak.</p>
-          <ul class="mt-6 flex flex-wrap gap-1.5">
-            <li class="perm">Lihat</li><li class="perm">Setujui</li>          </ul>
+                <article class="reveal">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>          <h3 class="mt-5 font-semibold">Manager Logistik</h3>
+          <p class="mt-2 text-[13px] leading-relaxed text-navy/55">Memantau kinerja mitra dan memutuskan perpanjangan.</p>
         </article>
-                <article class="role-card reveal">
-          <span class="role-badge">VDR</span>
-          <h3 class="mt-6 text-lg font-bold">Vendor</h3>
-          <p class="mt-2 text-sm leading-relaxed text-navy/65">Melihat kontrak miliknya dan mengunggah dokumen pendukung.</p>
-          <ul class="mt-6 flex flex-wrap gap-1.5">
-            <li class="perm">Lihat</li><li class="perm">Unggah</li>          </ul>
+                <article class="reveal">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l2-5h14l2 5M3 9h18v11H3zM9 20v-6h6v6"/></svg>          <h3 class="mt-5 font-semibold">Vendor</h3>
+          <p class="mt-2 text-[13px] leading-relaxed text-navy/55">Melihat kontrak miliknya dan mengunggah dokumen.</p>
         </article>
-                <article class="role-card reveal">
-          <span class="role-badge">STF</span>
-          <h3 class="mt-6 text-lg font-bold">Staff</h3>
-          <p class="mt-2 text-sm leading-relaxed text-navy/65">Mencatat aktivitas operasional dan memperbarui data lapangan.</p>
-          <ul class="mt-6 flex flex-wrap gap-1.5">
-            <li class="perm">Lihat</li><li class="perm">Catat</li>          </ul>
+                <article class="reveal">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M7 18c1-3 9-3 10 0"/></svg>          <h3 class="mt-5 font-semibold">Staf</h3>
+          <p class="mt-2 text-[13px] leading-relaxed text-navy/55">Mencatat aktivitas dan memperbarui data lapangan.</p>
         </article>
               </div>
     </div>
   </section>
 
-  <!-- ============ CTA banner ============ -->
+  <!-- CTA -->
   <section class="cta" aria-labelledby="ctaTitle">
-    <img class="cta-img" src="assets/img/harbor-aerial.jpg" alt="Foto udara Pelabuhan Cirebon dengan dermaga petikemas" width="1920" height="1088" loading="lazy">
+    <img class="cta-img" src="assets/img/harbor-aerial.jpg" alt="Foto udara Pelabuhan Cirebon" width="1920" height="1088" loading="lazy">
     <div class="cta-shade" aria-hidden="true"></div>
-    <div class="relative mx-auto flex max-w-shell flex-col items-start gap-8 px-6 py-32 md:flex-row md:items-end md:justify-between">
+    <div class="cta-inner mx-auto max-w-shell px-6">
       <div>
         <h2 id="ctaTitle" class="h2 text-white">Siap menata<br>langkah berikutnya?</h2>
-        <p class="mt-4 max-w-md text-white/75">Masuk dengan akun terdaftar untuk mulai mengelola kontrak.</p>
+        <p class="mt-3 text-sm text-white/80">Masuk dengan akun terdaftar untuk mulai mengelola kontrak.</p>
       </div>
-      <a href="login.php" class="btn-light btn-lg">Masuk ke CONTRACTHUB</a>
+      <a href="login.php" class="btn-primary">↗&nbsp; Masuk ke CONTRACTHUB</a>
     </div>
   </section>
 </main>
 
-<footer id="bantuan" class="bg-navy text-white/70">
-  <div class="mx-auto grid max-w-shell gap-12 px-6 py-16 md:grid-cols-12">
-    <div class="md:col-span-5">
-      <p class="text-white font-extrabold tracking-tight">CONTRACTHUB</p>
-      <p class="mt-1 text-sm">PT Pelabuhan Indonesia (Persero) · Cabang Cirebon</p>
-      <address class="mt-6 not-italic text-sm leading-relaxed">
-        Jl. Pasuketan No. 1, Cirebon<br>Jawa Barat 45111
-      </address>
-    </div>
-    <nav class="md:col-span-3" aria-label="Tautan cepat">
-      <p class="footer-h">Tautan cepat</p>
-      <ul class="mt-4 space-y-2 text-sm">
-        <li><a class="footer-link" href="#tentang">Tentang Sistem</a></li>
-        <li><a class="footer-link" href="#layanan">Layanan</a></li>
-        <li><a class="footer-link" href="#alur">Alur Kontrak</a></li>
-        <li><a class="footer-link" href="#akses">Hak Akses</a></li>
-      </ul>
+<footer id="bantuan" class="bg-white">
+  <div class="mx-auto max-w-shell px-6">
+    <nav class="flex gap-8 border-b border-navy/10 py-6 text-xs text-navy/60" aria-label="Tautan bantuan">
+      <a href="#">Panduan pengguna</a><a href="#">Privasi &amp; data</a><a href="#">Hubungi admin</a>
     </nav>
-    <div class="md:col-span-4">
-      <p class="footer-h">Bantuan</p>
-      <ul class="mt-4 space-y-2 text-sm">
-        <li><a class="footer-link" href="panduan.php">Panduan pengguna</a></li>
-        <li><a class="footer-link" href="mailto:contracthub@pelindo.co.id">contracthub@pelindo.co.id</a></li>
-        <li><a class="footer-link" href="privasi.php">Privasi &amp; data</a></li>
-      </ul>
+    <div class="grid gap-10 py-12 md:grid-cols-12">
+      <div class="md:col-span-4">
+        <div class="flex items-start gap-3">
+          <span class="logo-box"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#004C6D" stroke-width="1.6"><circle cx="12" cy="6" r="2"/><path d="M12 8v12M7 12h10M5 16c2 4 12 4 14 0"/></svg></span>
+          <div><p class="text-sm font-bold">CONTRACTHUB</p><p class="text-xs font-semibold">PT PELABUHAN INDONESIA (PERSERO)</p><p class="text-[11px] text-navy/50">Regional 2 Cirebon — Divisi Komersial &amp; Operasi</p></div>
+        </div>
+        <p class="mt-4 text-xs leading-relaxed text-navy/60">ContractHub menghadirkan tata kelola kontrak kepelabuhanan modern, monitoring pemanfaatan dermaga, gudang, dan lahan pelabuhan secara transparan.</p>
+      </div>
+      <div class="md:col-span-2 md:col-start-6"><p class="footer-h">Layanan &amp; Modul</p><ul class="footer-list"><li>Sewa Lahan &amp; Gudang D3</li><li>Dermaga &amp; Berthing</li><li>Alur Perjanjian Mitra</li><li>Monitoring Quota</li><li>E-Signature &amp; Legal</li></ul></div>
+      <div class="md:col-span-2"><p class="footer-h">Kepatuhan &amp; Regulasi</p><ul class="footer-list"><li>Validasi Barcode Kontrak</li><li>Kepatuhan ISPS Code</li><li>Integrasi SIMOPEL</li><li>Pedoman K3</li><li>Whistleblowing System</li></ul></div>
+      <div class="md:col-span-3"><p class="footer-h">Hubungi Pelabuhan</p>
+        <address class="footer-list not-italic"><b class="text-navy">Kantor Pelindo Cirebon</b><br>Jl. Pasuketan No. 1, Cirebon,<br>Jawa Barat 45111<br><br>Hotline: (0231) 202-000<br>contracthub@pelindo.co.id</address>
+      </div>
     </div>
-  </div>
-  <div class="border-t border-white/10">
-    <div class="mx-auto flex max-w-shell flex-col gap-2 px-6 py-6 text-xs sm:flex-row sm:justify-between">
-      <p>&copy; 2026 PT Pelabuhan Indonesia (Persero). Hak cipta dilindungi.</p>
-      <p>CONTRACTHUB · Pelindo Cirebon</p>
+    <div class="footer-bar">
+      <p><b>© 2026 PT Pelabuhan Indonesia (Persero) Regional 2 Cirebon.</b> Hak cipta dilindungi undang-undang.</p>
+      <p class="hidden md:flex gap-6"><span>Syarat &amp; Ketentuan</span><span>Kebijakan Privasi</span><span>ISO Tersertifikasi</span></p>
     </div>
+    <div class="flex justify-between py-6 text-[11px] text-navy/45"><p>© 2026 CONTRACTHUB · PT Pelindo Cirebon</p><p>Dari pelabuhan untuk kerja yang lebih tertib.</p></div>
   </div>
 </footer>
 
