@@ -18,20 +18,20 @@
     });
   }
 
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var heroVideo = document.querySelector('.hero-video');
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion && heroVideo) {
+    heroVideo.removeAttribute('autoplay');
+    heroVideo.pause();
+  }
+  if (reduceMotion) return;
   if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
   gsap.registerPlugin(ScrollTrigger);
 
-  // Hero parallax: each vector layer moves at its own depth
+  // The camera reveal plays once; scroll adds a separate foreground-to-background drift.
   var st = { trigger: '#hero', start: 'top top', end: 'bottom top', scrub: 0.5 };
-  gsap.to('.layer-sky',   { y: 120, ease: 'none', scrollTrigger: st });
-  gsap.to('.layer-hills', { y: 70,  ease: 'none', scrollTrigger: st });
-  gsap.to('.layer-port',  { y: 40,  ease: 'none', scrollTrigger: st });
-  gsap.to('.layer-ship',  { x: 60, y: 20, ease: 'none', scrollTrigger: st });
+  gsap.to('.hero-video', { yPercent: 9, scale: 1.08, ease: 'none', scrollTrigger: st });
   gsap.to('.hero-content', { y: -60, opacity: 0.2, ease: 'none', scrollTrigger: st });
-
-  // Gentle ship bob
-  gsap.to('.layer-ship', { rotation: 0.6, transformOrigin: '50% 100%', yoyo: true, repeat: -1, duration: 3, ease: 'sine.inOut' });
 
   gsap.utils.toArray('.reveal').forEach(function (el) {
     gsap.from(el, { y: 24, opacity: 0, duration: 0.7, ease: 'power2.out', scrollTrigger: { trigger: el, start: 'top 88%', once: true } });
