@@ -21,8 +21,7 @@
   var heroVideo = document.querySelector('.hero-video');
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduceMotion && heroVideo) {
-    heroVideo.removeAttribute('autoplay');
-    heroVideo.pause();
+    heroVideo.src = heroVideo.dataset.staticImage;
   }
   if (reduceMotion) return;
   if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
