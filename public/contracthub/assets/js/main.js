@@ -27,7 +27,31 @@
   if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
   gsap.registerPlugin(ScrollTrigger);
 
-  // The camera reveal plays once; scroll adds a separate foreground-to-background drift.
+  // Order: the camera reveal (teropong -> pelabuhan) plays once to the end,
+  // only then the heading and actions move in over the final aerial frame.
+  var revealEls = [
+    document.querySelector('.hero-content .eyebrow'),
+    document.querySelector('.hero-content .hero-title'),
+    document.querySelector('.hero-content .hero-sub'),
+    document.querySelector('.hero-content .hero-cta'),
+    document.querySelector('.hero-foot')
+  ].filter(Boolean);
+  var revealed = false;
+  function revealHero() {
+    if (revealed) return;
+    revealed = true;
+    gsap.to(revealEls, { y: 0, opacity: 1, duration: 0.9, ease: 'power3.out', stagger: 0.12 });
+  }
+  if (revealEls.length) {
+    gsap.set(revealEls, { y: 36, opacity: 0 });
+    var waitMs = Math.max((parseInt(heroVideo && heroVideo.dataset.duration, 10) || 10000) - 400, 0);
+    var revealTimer = setTimeout(revealHero, waitMs);
+    if (heroVideo) {
+      heroVideo.addEventListener('error', function () { clearTimeout(revealTimer); revealHero(); });
+    }
+  }
+
+  // Scroll adds a separate foreground-to-background drift.
   var st = { trigger: '#hero', start: 'top top', end: 'bottom top', scrub: 0.5 };
   gsap.to('.hero-video', { yPercent: 9, scale: 1.08, ease: 'none', scrollTrigger: st });
   gsap.to('.hero-content', { y: -60, opacity: 0.2, ease: 'none', scrollTrigger: st });
